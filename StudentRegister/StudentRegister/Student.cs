@@ -86,5 +86,9 @@ namespace StudentRegister
             courseHistory = new List<CourseResult>();
         }
 
+        public override string ToString()
+        {
+            return $"{Last}, {First}, ({GPA})";
+        }
     }
 }

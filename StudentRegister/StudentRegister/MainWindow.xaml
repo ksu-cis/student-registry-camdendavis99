@@ -8,7 +8,17 @@
         Title="MainWindow" Height="450" Width="800">
 
     <DockPanel>
-        <ListBox DockPanel.Dock="Right" Name="StudentList"/>
+        <ListBox DockPanel.Dock="Right" Name="StudentList" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock MinWidth="100" Text="{Binding Path=Last}"/>
+                        <TextBlock MinWidth="100" Text="{Binding Path=First}"/>
+                        <TextBlock MinWidth="100" Text="{Binding Path=GPA}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <ContentControl Name="SelectedStudent" />
     </DockPanel>
     
